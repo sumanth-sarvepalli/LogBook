@@ -3,6 +3,14 @@
 
 #include <QAbstractTableModel>
 
+enum Roles{
+    IdRole,
+    DateRole,
+    TimeRole,
+    MessageRole,
+    MaxRole
+};
+
 class LogBookModel : public QAbstractTableModel
 {
     Q_OBJECT

@@ -38,7 +38,7 @@ int LogBookProxyModel::rowCount(const QModelIndex &parent) const
 int LogBookProxyModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 4;
+    return sourceModel()->columnCount();
 }
 
 QVariant LogBookProxyModel::data(const QModelIndex &index, int role) const

@@ -9,13 +9,6 @@ class LogBookProxyModel: public QAbstractProxyModel
     Q_OBJECT
     QML_ELEMENT
 public:
-    enum Roles{
-        IdRole,
-        DateRole,
-        TimeRole,
-        MessageRole,
-        MaxRole
-    };
 
     static LogBookProxyModel *getInstance();
 

@@ -25,7 +25,7 @@ int LogBookModel::columnCount(const QModelIndex &parent) const
     if (parent.isValid())
         return 0;
 
-    return 4;
+    return MaxRole;
 }
 
 QVariant LogBookModel::data(const QModelIndex &index, int role) const
