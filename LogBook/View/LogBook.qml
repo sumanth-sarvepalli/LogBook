@@ -3,8 +3,8 @@ import QtQuick.Controls
 import QtQuick.Layouts
 
 Rectangle {
-    width: 1200
-    height: 800
+    width: screenWidth
+    height: screenHeight
     visible: true
     color: "black"
 
@@ -19,8 +19,8 @@ Rectangle {
     // Table Header
     Rectangle{
         id: logRect
-        width: 1000
-        height: 600
+        width: screenWidth * 0.8
+        height: screenHeight * 0.6
         radius: 5
         anchors{
             left: parent.left
@@ -45,7 +45,7 @@ Rectangle {
             // Id
             Rectangle{
                 id: idHeader
-                width: 60
+                width: 90
                 height: 30
                 Text {
                     id: idTxt
@@ -64,7 +64,7 @@ Rectangle {
             // Date
             Rectangle{
                 id: dateHeader
-                width: 60
+                width: 80
                 height: 30
                 Text {
                     id: dateTxt
@@ -83,7 +83,7 @@ Rectangle {
             // Time
             Rectangle{
                 id: timeHeader
-                width: 60
+                width: 120
                 height: 30
                 Text {
                     id: timeTxt
@@ -136,13 +136,17 @@ Rectangle {
         // TableView with Data
         TableView {
             id: logTable
-            width: 900
-            height: 500
+            width: parent.width
+            height: parent.height
+            clip: true
+            columnSpacing: 30
             anchors {
                 left: parent.left
-                leftMargin: 20
+                leftMargin: 1
                 top: lineRect.bottom
                 topMargin: 20
+                bottom: parent.bottom
+                bottomMargin: 20
             }
             ScrollBar.horizontal: ScrollBar{
                 id: hScroll
@@ -160,11 +164,11 @@ Rectangle {
                 policy: ScrollBar.AsNeeded
                 size: 5
             }
-            model: logBookModel
+            model: logBookProxyModel
             delegate: Rectangle {
                 id: delegateRect
-                implicitHeight: 50
-                implicitWidth: 300
+                implicitHeight: 20
+                implicitWidth: 100
 
                 Text {
                     id: dispText

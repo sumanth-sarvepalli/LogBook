@@ -2,28 +2,12 @@
 #define LOGBOOKMODEL_H
 
 #include <QAbstractTableModel>
-#include <QMap>
-
-typedef struct LogData
-{
-    int m_id;
-    QString m_date;
-    QString m_time;
-    QString m_message;
-}LogData;
 
 class LogBookModel : public QAbstractTableModel
 {
     Q_OBJECT
 
 public:
-    enum Roles{
-        IdRole,
-        DateRole,
-        TimeRole,
-        MessageRole,
-        MaxRole
-    };
 
     static LogBookModel *getInstance();
 
@@ -35,11 +19,12 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    void updateData();
+    void addData(QString logEntry);
 
 private:
     explicit LogBookModel(QObject *parent = nullptr);
-    QMap<int, LogData> m_logData;
+
+    QList<QString> m_logData;
 };
 
 #endif // LOGBOOKMODEL_H

@@ -1,8 +1,15 @@
 QT += quick
 
 SOURCES += \
+        Controller/LogBookController.cpp \
         Model/LogBookModel.cpp \
+        Model/LogBookProxyModel.cpp \
         main.cpp
+
+HEADERS += \
+    Controller/LogBookController.h \
+    Model/LogBookModel.h \
+    Model/LogBookProxyModel.h
 
 resources.files = View/Main.qml View/UserLog.qml View/LogBook.qml Images/logbook.svg
 resources.prefix = /$${TARGET}
@@ -18,6 +25,3 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-HEADERS += \
-    Model/LogBookModel.h
