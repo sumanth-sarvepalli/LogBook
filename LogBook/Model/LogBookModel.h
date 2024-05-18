@@ -25,7 +25,6 @@ public:
 
     // QAbstractTableModel interface
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
-    QHash<int, QByteArray> roleNames() const override;
 
     void addData(QString logEntry);
 

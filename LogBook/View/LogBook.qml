@@ -139,6 +139,8 @@ Rectangle {
             width: parent.width
             height: parent.height
             clip: true
+            boundsBehavior: Flickable.StopAtBounds
+            rowSpacing: 1
             columnSpacing: 30
             anchors {
                 left: parent.left

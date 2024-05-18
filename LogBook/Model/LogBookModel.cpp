@@ -42,11 +42,6 @@ QVariant LogBookModel::data(const QModelIndex &index, int role) const
     return roleValue;
 }
 
-QHash<int, QByteArray> LogBookModel::roleNames() const
-{
-    return { {Qt::DisplayRole, "display"} };
-}
-
 void LogBookModel::addData(QString logEntry)
 {
     m_logData.append(logEntry);
