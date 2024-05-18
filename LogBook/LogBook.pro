@@ -4,12 +4,14 @@ SOURCES += \
         Controller/LogBookController.cpp \
         Model/LogBookModel.cpp \
         Model/LogBookProxyModel.cpp \
+        Model/LogBookSortProxyModel.cpp \
         main.cpp
 
 HEADERS += \
     Controller/LogBookController.h \
     Model/LogBookModel.h \
-    Model/LogBookProxyModel.h
+    Model/LogBookProxyModel.h \
+    Model/LogBookSortProxyModel.h
 
 resources.files = View/Main.qml View/UserLog.qml View/LogBook.qml Images/logbook.svg
 resources.prefix = /$${TARGET}

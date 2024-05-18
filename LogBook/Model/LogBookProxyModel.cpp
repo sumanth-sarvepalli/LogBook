@@ -1,13 +1,13 @@
 #include "LogBookProxyModel.h"
+#include "LogBookSortProxyModel.h"
 #include "LogBookModel.h"
 #include <QDateTime>
 
 LogBookProxyModel::LogBookProxyModel(QObject *parent)
     : QAbstractProxyModel(parent)
 {
-    setSourceModel(LogBookModel::getInstance());
+    setSourceModel(LogBookSortProxyModel::getInstance());
 }
-
 
 LogBookProxyModel *LogBookProxyModel::getInstance()
 {
